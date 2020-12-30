@@ -6,7 +6,7 @@ class WhatsAppBot < Sinatra::Base
     body = params["Body"].downcase
     response = Twilio::TwiML::MessagingResponse.new
     response.message do |message|
-      body.include?('oi') ? message.body('Oi, Carise!') : message.body("Escreve 'oi' Carise!")
+      body.include?('oi') ? message.body('Oi, Carise!') : message.body("Escreve 'oi' Carise! Por favor!")
     end
     content_type "text/xml"
     response.to_xml
